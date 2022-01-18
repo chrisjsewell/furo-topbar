@@ -1,0 +1,33 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "furo_tb"
+dynamic = ["version", "description"]
+authors = [{name = "Chris Sewell", email = "chrisj_sewell@hotmail.com"}]
+readme = "README.md"
+license = {file = "LICENSE"}
+classifiers = [
+  "Framework :: Sphinx",
+  "Framework :: Sphinx :: Theme",
+  "License :: OSI Approved :: MIT License",
+  "Environment :: Web Environment",
+  "Topic :: Documentation",
+  "Topic :: Software Development :: Documentation",
+]
+requires-python = ">=3.7"
+dependencies = ["furo"]
+
+[project.urls]
+Source = "https://github.com/chrisjsewell/furo-topbar"
+
+[project.optional-dependencies]
+docs = ["myst-parser"]
+
+[project.entry-points]
+"sphinx.html_themes" = {furo_tb = "furo_tb"}
+
+[tool.isort]
+profile = "black"
+force_sort_within_sections = true

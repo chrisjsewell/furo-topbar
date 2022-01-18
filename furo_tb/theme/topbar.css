@@ -1,0 +1,74 @@
+.ftb-container {
+    height: 16px;
+    position: sticky;
+    top: 0;
+    padding-top: 16px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+}
+
+/* Copied from https://www.w3schools.com/howto/howto_css_dropdown.asp
+ */
+/* Dropdown Button */
+.ftb-dropbtn {
+    border-radius: 5px;
+    background-color: var(--color-foreground-secondary);
+    color: var(--color-background-primary);
+    fill: var(--color-background-primary);
+    /* padding: 16px; */
+    font-size: 16px;
+    border: none;
+    margin-bottom: 2px;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.ftb-dropdown {
+    position: relative;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.ftb-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--color-foreground-primary);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    z-index: 1;
+    right: 0;
+    margin-left: auto;
+}
+
+/* Links inside the dropdown */
+.ftb-dropdown-content a {
+    color: var(--color-background-primary);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.ftb-dropdown-content a:hover {
+    color: var(--color-brand-content);
+    background-color: var(--color-foreground-secondary);
+}
+
+/* Show the dropdown menu on hover */
+.ftb-dropdown:hover .ftb-dropdown-content,
+.ftb-dropdown:active .ftb-dropdown-content .ftb-dropdown:focus .ftb-dropdown-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.ftb-dropdown:hover .ftb-dropbtn {
+    background-color: var(--color-foreground-primary);
+}
+
+.ftb-other {
+    width: 35px !important;
+    height: 35px !important;
+    color: var(--color-background-primary) !important;
+}
