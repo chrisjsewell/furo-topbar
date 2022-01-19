@@ -4,9 +4,9 @@
 
 `furo-topbar` is an extension of the excellent [furo] sphinx theme (all attribution to `@pradsyung`!).
 It aims to add an optional top-bar to pages, with a **pluggable** set of widgets, to add functionality to your documentation.
-the widgets are intended to be as unobtrusive as possible, and fit in with the rest of the theme.
+The widgets are intended to be as unobtrusive as possible, and fit in with the rest of the theme.
 
-Simply add the theme to your sphinx configuration, then you can specify the set of widgets to use in the topbar, with related configuration:
+Simply add the theme to your sphinx configuration, then you can specify the set of widgets to use in the top-bar, with related configuration:
 
 ```python
 html_theme = "furo_tb"
@@ -29,7 +29,7 @@ furo_topbar_widgets = {
 # furo_topbar_hide_on_scroll = True
 ```
 
-Widgets will only be shown if they are included in `furo_topbar_widgets` and the order of the widgets on the page will be the same as in the key order.
+Widgets will only be shown if they are included in `furo_topbar_widgets` and the order of the widgets on the page will be the same as the key order.
 
 The current set of widgets are:
 
