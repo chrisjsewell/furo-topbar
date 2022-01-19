@@ -66,9 +66,11 @@
     background-color: var(--color-foreground-secondary);
 }
 
-/* Show the dropdown menu on hover */
+
+/* Show the dropdown menu on hover or click/tap */
 .ftb-dropdown:hover .ftb-dropdown-content,
-.ftb-dropdown:active .ftb-dropdown-content .ftb-dropdown:focus .ftb-dropdown-content {
+.ftb-dropdown:active .ftb-dropdown-content,
+.ftb-dropdown:focus .ftb-dropdown-content {
     display: block;
 }
 

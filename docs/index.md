@@ -87,6 +87,7 @@ Currently, the whole `page.html` has to be copied from [furo], it would be nice 
 
 - Can this extension be more formally integrated with [furo]? (`@pradyung`'s input would be great!)
 - Could it even be "theme agnostic", i.e. used within any theme?
+- Behaviour on mobile (currently not "sticky")
 - Allow, for example, for [myst-nb](https://myst-nb.readthedocs.io), to define a widget for launching Jupyter Notebooks (in Binder, etc)
 
 [furo]: https://github.com/pradyunsg/furo
