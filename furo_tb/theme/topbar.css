@@ -1,5 +1,5 @@
 .ftb-container {
-    height: 16px;
+    height: 18px;
     position: sticky;
     top: 0;
     padding-top: 16px;
@@ -16,10 +16,20 @@
     background-color: var(--color-foreground-secondary);
     color: var(--color-background-primary);
     fill: var(--color-background-primary);
-    /* padding: 16px; */
     font-size: 16px;
     border: none;
     margin-bottom: 2px;
+    padding: 0;
+}
+
+.ftb-dropbtn.clickable {
+    cursor: pointer;
+}
+
+.ftb-dropbtn>svg {
+    width: 30px;
+    height: 30px;
+    margin: 2px;
 }
 
 /* The container <div> - needed to position the dropdown content */
@@ -34,7 +44,7 @@
     display: none;
     position: absolute;
     background-color: var(--color-foreground-primary);
-    min-width: 160px;
+    min-width: 150px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     z-index: 1;
@@ -43,7 +53,7 @@
 }
 
 /* Links inside the dropdown */
-.ftb-dropdown-content a {
+.ftb-dropdown-content>a {
     color: var(--color-background-primary);
     padding: 12px 16px;
     text-decoration: none;
@@ -51,7 +61,7 @@
 }
 
 /* Change color of dropdown links on hover */
-.ftb-dropdown-content a:hover {
+.ftb-dropdown-content>a:hover {
     color: var(--color-brand-content);
     background-color: var(--color-foreground-secondary);
 }
@@ -67,7 +77,11 @@
     background-color: var(--color-foreground-primary);
 }
 
-.ftb-other {
+.ftb-theme-toggle {
+    /* A temp cheat for the furo theme toggle SVGs
+       They are slightly smaller than the other buttons,
+       because they use `display: block` instead of `display: inline-block`
+    */
     width: 35px !important;
     height: 35px !important;
     color: var(--color-background-primary) !important;
