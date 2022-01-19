@@ -1,8 +1,6 @@
 """Code to implement top-bar buttons."""
-
-from multiprocessing.sharedctypes import Value
 from textwrap import dedent
-from typing import Any, Dict, cast
+from typing import Any, Dict
 
 from docutils import nodes
 from sphinx.application import Sphinx
@@ -28,13 +26,16 @@ def _html_page_context(
         return
     config = app.config.furo_topbar_widgets
 
-    if config is None or 'page_source_suffix' not in context:
+    if config is None or "page_source_suffix" not in context:
         return
     assert isinstance(config, dict)
     # TODO schema warnings per key
 
     if app.config.furo_topbar_hide_on_scroll:
-        app.add_js_file(None, body=dedent("""\
+        app.add_js_file(
+            None,
+            body=dedent(
+                """\
         /* When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar */
         var prevScrollpos = window.pageYOffset;
         window.onscroll = function() {
@@ -45,8 +46,10 @@ def _html_page_context(
             document.getElementById("ftb-container").style.top = "-100px";
         }
         prevScrollpos = currentScrollPos;
-        } 
-        """))
+        }
+        """
+            ),
+        )
 
     context["furo_topbar"] = {}
 
@@ -56,9 +59,7 @@ def _html_page_context(
         github_issue = f"{github_repo}/issues/new?title=Issue%20on%20page%20%2F{pagename}{context['file_suffix']}&body=Your%20issue%20content%20here."
         branch = github_config.get("branch", "main")
         path_to_docs = github_config.get("path_to_docs", "docs")
-        github_edit = (
-            f"{github_repo}/edit/{branch}/{path_to_docs}/{pagename}{context['page_source_suffix']}"
-        )
+        github_edit = f"{github_repo}/edit/{branch}/{path_to_docs}/{pagename}{context['page_source_suffix']}"
         # TODO translations
         content = "\n".join(
             [
@@ -78,11 +79,13 @@ def _html_page_context(
         context["furo_topbar"]["theme_toggle"] = {
             "button_class": "theme-toggle",
             "button_title": "Toggle Light / Dark / Auto color theme",
-            "button": dedent(f"""\
+            "button": dedent(
+                """\
                 <svg class="theme-icon-when-auto ftb-theme-toggle"><use href="#svg-sun-half"></use></svg>
                 <svg class="theme-icon-when-dark ftb-theme-toggle"><use href="#svg-moon"></use></svg>
                 <svg class="theme-icon-when-light ftb-theme-toggle"><use href="#svg-sun"></use></svg>
-                """),
+                """
+            ),
             "dropdown": "",
         }
 
@@ -106,7 +109,10 @@ def _html_page_context(
 
     if config.get("fullscreen"):
         # copied from https://www.w3schools.com/howto/howto_js_navbar_hide_scroll.asp
-        app.add_js_file(None, body=dedent("""\
+        app.add_js_file(
+            None,
+            body=dedent(
+                """\
             var elem = document.documentElement;
 
             function openFullscreen() {
@@ -118,7 +124,9 @@ def _html_page_context(
                 elem.msRequestFullscreen();
             }
             }
-        """))
+        """
+            ),
+        )
         context["furo_topbar"]["fullscreen"] = {
             "button_class": "clickable",
             "button_title": "Fullscreen",
@@ -127,4 +135,8 @@ def _html_page_context(
         }
 
     # sort the keys in the order provided
-    context["furo_topbar"] = {key: context["furo_topbar"][key] for key in config if key in context["furo_topbar"]}
+    context["furo_topbar"] = {
+        key: context["furo_topbar"][key]
+        for key in config
+        if key in context["furo_topbar"]
+    }
