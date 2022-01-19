@@ -24,6 +24,7 @@ Source = "https://github.com/chrisjsewell/furo-topbar"
 Documentation = "https://furo-topbar.readthedocs.io/"
 
 [project.optional-dependencies]
+testing = ["pytest", "beautifulsoup4"]
 docs = ["myst-parser"]
 
 [project.entry-points]

@@ -24,14 +24,15 @@ def _html_page_context(
     # for context variables
     if app.config.html_theme != "furo":
         return
-    config = app.config.furo_topbar_widgets
+
+    config = get_theme_config(app, "furo_topbar_widgets", None)
 
     if config is None or "page_source_suffix" not in context:
         return
     assert isinstance(config, dict)
     # TODO schema warnings per key
 
-    if app.config.furo_topbar_hide_on_scroll:
+    if get_theme_config(app, "furo_topbar_hide_on_scroll", False):
         app.add_js_file(
             None,
             body=dedent(
@@ -140,3 +141,19 @@ def _html_page_context(
         for key in config
         if key in context["furo_topbar"]
     }
+
+
+def get_theme_config(app: Sphinx, name: str, default=None):
+    # account for https://github.com/sphinx-doc/sphinx/issues/10120
+    config = getattr(app.config, name, default)
+    if (
+        hasattr(app.config, "overrides")
+        and app.config.overrides.get(name, default) != default
+    ):
+        config = app.config.overrides[name]
+    elif (
+        hasattr(app.config, "_raw_config")
+        and app.config._raw_config.get(name, default) != default
+    ):
+        config = app.config._raw_config[name]
+    return config
