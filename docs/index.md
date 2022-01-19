@@ -1,5 +1,7 @@
 # furo-topbar (IN-DEVELOPMENT)
 
+[![PyPI version][pypi-badge]][pypi-link]
+
 ## Introduction
 
 `furo-topbar` is an extension of the excellent [furo] sphinx theme (all attribution to `@pradsyung`!).
@@ -89,3 +91,5 @@ Currently, the whole `page.html` has to be copied from [furo], it would be nice 
 
 [furo]: https://github.com/pradyunsg/furo
 [sphinx-book-theme]: https://sphinx-book-theme.readthedocs.io
+[pypi-badge]: https://badge.fury.io/py/furo_tb.svg
+[pypi-link]: https://badge.fury.io/py/furo_tb
