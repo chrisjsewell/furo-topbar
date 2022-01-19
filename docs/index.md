@@ -10,6 +10,10 @@ Simply add the theme to your sphinx configuration, then you can specify the set 
 
 ```python
 html_theme = "furo_tb"
+# theme options inherit directly from furo
+html_theme_options = {
+    "announcement": "This is in development!",
+}
 furo_topbar_widgets = {
     "scroll_to_top": True,
     "fullscreen": True,

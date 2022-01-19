@@ -9,6 +9,9 @@ extensions = [
 ]
 myst_enable_extensions = ["deflist"]
 html_theme = "furo_tb"
+html_theme_options = {
+    "announcement": "This is in development!",
+}
 furo_topbar_widgets = {
     "scroll_to_top": True,
     "fullscreen": True,
