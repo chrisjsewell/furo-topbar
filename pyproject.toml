@@ -21,6 +21,7 @@ dependencies = ["furo~=2022.1.2"]
 
 [project.urls]
 Source = "https://github.com/chrisjsewell/furo-topbar"
+Documentation = "https://furo-topbar.readthedocs.io/"
 
 [project.optional-dependencies]
 docs = ["myst-parser"]

@@ -1,3 +1,5 @@
 # furo-topbar
 
-Adding a topbar to the furo sphinx theme
+Adding a top-bar to the furo sphinx theme.
+
+See <https://furo-topbar.readthedocs.io/>
